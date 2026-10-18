@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Ejecuta la versión más nueva instalada de claude-pets. /pets:setup copia este archivo a
-// <config>/plugins/claude-pets/ para que la statusLine siga funcionando cuando el plugin se actualiza.
+// Runs the newest installed version of claude-pets. /pets:setup copies this file to
+// <config>/plugins/claude-pets/ so your statusLine keeps working every time the plugin updates.
 'use strict';
 const fs = require('fs');
 const os = require('os');

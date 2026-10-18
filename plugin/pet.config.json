@@ -1,7 +1,8 @@
 {
-  "creature": "gato",
+  "creature": "kitty",
   "lang": "en",
   "color": true,
+  "maxAgents": 4,
   "firma": {
     "enabled": true,
     "glifo": "@",
@@ -11,7 +12,6 @@
   "encadenar": "",
   "thresholds": {
     "workingSec": 20,
-    "agentsSec": 60,
     "sleepSec": 120,
     "errorTailLines": 40,
     "errorWindowSec": 300,
@@ -23,11 +23,11 @@
       "working": "trabajando...",
       "agents1": "1 agente trabajando",
       "agentsN": "{n} agentes trabajando",
-      "error": "algo fallo, revisa",
+      "error": "algo falló, revisa",
       "sleeping": "dormitando... zzz"
     },
     "en": {
-      "calm": "purring",
+      "calm": "chilling",
       "working": "on it...",
       "agents1": "1 agent working",
       "agentsN": "{n} agents working",
@@ -36,7 +36,8 @@
     }
   },
   "creatures": {
-    "gato": {
+    "kitty": {
+      "name": "Kitty",
       "calm": [
         "=^.^=",
         "=^-^="
@@ -56,9 +57,41 @@
       "sleeping": [
         "=-.-= z",
         "=-.-= Z"
+      ],
+      "messages": {
+        "es": {
+          "calm": "ronroneando"
+        },
+        "en": {
+          "calm": "purring"
+        }
+      }
+    },
+    "dog": {
+      "name": "Dog",
+      "calm": [
+        "U'.'U",
+        "U'-'U"
+      ],
+      "working": [
+        "U'o'U",
+        "U'O'U"
+      ],
+      "agents": [
+        "U'.'U/",
+        "U'.'U\\"
+      ],
+      "error": [
+        "U;.;U",
+        "Ux.xU"
+      ],
+      "sleeping": [
+        "U-.-U z",
+        "U-.-U Z"
       ]
     },
-    "buho": {
+    "owl": {
+      "name": "Owl",
       "calm": [
         "{o,o}",
         "{-,o}"
@@ -79,7 +112,489 @@
         "{-,-} z",
         "{-,-} Z"
       ]
+    },
+    "dragon": {
+      "name": "Dragon",
+      "calm": [
+        "<^.^>~",
+        "<^-^>~"
+      ],
+      "working": [
+        "<^o^>~~",
+        "<^O^>~~~"
+      ],
+      "agents": [
+        "<^.^>~/",
+        "<^.^>~\\"
+      ],
+      "error": [
+        "<x.x>~",
+        "<;.;>~"
+      ],
+      "sleeping": [
+        "<-.->~ z",
+        "<-.->~ Z"
+      ]
+    },
+    "bunny": {
+      "name": "Bunny",
+      "calm": [
+        "(='.'=)",
+        "(='-'=)"
+      ],
+      "working": [
+        "(='o'=)",
+        "(='O'=)"
+      ],
+      "agents": [
+        "(='.'=)/",
+        "(='.'=)\\"
+      ],
+      "error": [
+        "(=;.;=)",
+        "(=x.x=)"
+      ],
+      "sleeping": [
+        "(=-.-=) z",
+        "(=-.-=) Z"
+      ]
+    },
+    "penguin": {
+      "name": "Penguin",
+      "calm": [
+        "<('.')>",
+        "<('-')>"
+      ],
+      "working": [
+        "<('o')>",
+        "<('O')>"
+      ],
+      "agents": [
+        "<('.')>/",
+        "<('.')>\\"
+      ],
+      "error": [
+        "<(;.;)>",
+        "<(x.x)>"
+      ],
+      "sleeping": [
+        "<(-.-)> z",
+        "<(-.-)> Z"
+      ]
+    },
+    "fish": {
+      "name": "Fish",
+      "calm": [
+        "><(('>",
+        "><(('> ~"
+      ],
+      "working": [
+        "><((o>",
+        "><((O>"
+      ],
+      "agents": [
+        "><(('>/",
+        "><(('>\\"
+      ],
+      "error": [
+        "><((x>",
+        "><((;>"
+      ],
+      "sleeping": [
+        "><((-> z",
+        "><((-> Z"
+      ]
+    },
+    "octopus": {
+      "name": "Octopus",
+      "calm": [
+        "~(o.o)~",
+        "~(o-o)~"
+      ],
+      "working": [
+        "~(O.O)~",
+        "~(o.O)~"
+      ],
+      "agents": [
+        "~(o.o)~/",
+        "~(o.o)~\\"
+      ],
+      "error": [
+        "~(x.x)~",
+        "~(;.;)~"
+      ],
+      "sleeping": [
+        "~(-.-)~ z",
+        "~(-.-)~ Z"
+      ]
+    },
+    "mouse": {
+      "name": "Mouse",
+      "calm": [
+        "<:3 )~",
+        "<:3 )~~"
+      ],
+      "working": [
+        "<:o )~",
+        "<:O )~"
+      ],
+      "agents": [
+        "<:3 )~/",
+        "<:3 )~\\"
+      ],
+      "error": [
+        "<:x )~",
+        "<:; )~"
+      ],
+      "sleeping": [
+        "<:- )~ z",
+        "<:- )~ Z"
+      ]
+    },
+    "pig": {
+      "name": "Pig",
+      "calm": [
+        "(^oo^)",
+        "(^oo^)~"
+      ],
+      "working": [
+        "(^OO^)",
+        "(^oO^)"
+      ],
+      "agents": [
+        "(^oo^)/",
+        "(^oo^)\\"
+      ],
+      "error": [
+        "(xoox)",
+        "(;oo;)"
+      ],
+      "sleeping": [
+        "(-oo-) z",
+        "(-oo-) Z"
+      ]
+    },
+    "frog": {
+      "name": "Frog",
+      "calm": [
+        "(@..@)",
+        "(@--@)"
+      ],
+      "working": [
+        "(@oo@)",
+        "(@OO@)"
+      ],
+      "agents": [
+        "(@..@)/",
+        "(@..@)\\"
+      ],
+      "error": [
+        "(x..x)",
+        "(;..;)"
+      ],
+      "sleeping": [
+        "(-..-) z",
+        "(-..-) Z"
+      ]
+    },
+    "robot": {
+      "name": "Robot",
+      "calm": [
+        "[o_o]",
+        "[-_o]"
+      ],
+      "working": [
+        "[O_O]",
+        "[o_O]"
+      ],
+      "agents": [
+        "[o_o]/",
+        "[o_o]\\"
+      ],
+      "error": [
+        "[x_x]",
+        "[#_#]"
+      ],
+      "sleeping": [
+        "[-_-] z",
+        "[-_-] Z"
+      ]
+    },
+    "alien": {
+      "name": "Alien",
+      "calm": [
+        "(@_@)",
+        "(@_-)"
+      ],
+      "working": [
+        "(@o@)",
+        "(@O@)"
+      ],
+      "agents": [
+        "(@_@)/",
+        "(@_@)\\"
+      ],
+      "error": [
+        "(x_x)",
+        "(;_;)"
+      ],
+      "sleeping": [
+        "(-_-) z",
+        "(-_-) Z"
+      ]
+    },
+    "monkey": {
+      "name": "Monkey",
+      "calm": [
+        "@('_')@",
+        "@('-')@"
+      ],
+      "working": [
+        "@('o')@",
+        "@('O')@"
+      ],
+      "agents": [
+        "@('_')@/",
+        "@('_')@\\"
+      ],
+      "error": [
+        "@(x_x)@",
+        "@(;_;)@"
+      ],
+      "sleeping": [
+        "@(-_-)@ z",
+        "@(-_-)@ Z"
+      ]
+    },
+    "bear": {
+      "name": "Bear",
+      "calm": [
+        "c(^.^)c",
+        "c(^-^)c"
+      ],
+      "working": [
+        "c(^o^)c",
+        "c(^O^)c"
+      ],
+      "agents": [
+        "c(^.^)c/",
+        "c(^.^)c\\"
+      ],
+      "error": [
+        "c(x.x)c",
+        "c(;.;)c"
+      ],
+      "sleeping": [
+        "c(-.-)c z",
+        "c(-.-)c Z"
+      ]
+    },
+    "bird": {
+      "name": "Bird",
+      "calm": [
+        "(.>",
+        "<.)"
+      ],
+      "working": [
+        "(o>",
+        "(O>"
+      ],
+      "agents": [
+        "(.>/",
+        "(.>\\"
+      ],
+      "error": [
+        "(x>",
+        "(;>"
+      ],
+      "sleeping": [
+        "(-> z",
+        "(-> Z"
+      ]
+    },
+    "duck": {
+      "name": "Duck",
+      "calm": [
+        "__(.)<",
+        "__(.)<~"
+      ],
+      "working": [
+        "__(o)<",
+        "__(O)<"
+      ],
+      "agents": [
+        "__(.)</",
+        "__(.)<\\"
+      ],
+      "error": [
+        "__(x)<",
+        "__(;)<"
+      ],
+      "sleeping": [
+        "__(-)< z",
+        "__(-)< Z"
+      ]
+    },
+    "crab": {
+      "name": "Crab",
+      "calm": [
+        "(\\/)(o,,o)(\\/)",
+        "(\\/)(-,,o)(\\/)"
+      ],
+      "working": [
+        "(\\/)(O,,O)(\\/)",
+        "(\\/)(o,,O)(\\/)"
+      ],
+      "agents": [
+        "(\\/)(o,,o)(\\/)/",
+        "(\\/)(o,,o)(\\/)\\"
+      ],
+      "error": [
+        "(\\/)(x,,x)(\\/)",
+        "(\\/)(;,,;)(\\/)"
+      ],
+      "sleeping": [
+        "(\\/)(-,,-)(\\/) z",
+        "(\\/)(-,,-)(\\/) Z"
+      ]
+    },
+    "bat": {
+      "name": "Bat",
+      "calm": [
+        "/\\(o.o)/\\",
+        "\\/(o.o)\\/"
+      ],
+      "working": [
+        "/\\(O.O)/\\",
+        "\\/(O.O)\\/"
+      ],
+      "agents": [
+        "/\\(o.o)/\\/",
+        "/\\(o.o)/\\\\"
+      ],
+      "error": [
+        "/\\(x.x)/\\",
+        "\\/(;.;)\\/"
+      ],
+      "sleeping": [
+        "\\/(-.-)\\/ z",
+        "\\/(-.-)\\/ Z"
+      ]
+    },
+    "spider": {
+      "name": "Spider",
+      "calm": [
+        "//(o.o)\\\\",
+        "\\\\(o.o)//"
+      ],
+      "working": [
+        "//(O.O)\\\\",
+        "\\\\(O.O)//"
+      ],
+      "agents": [
+        "//(o.o)\\\\/",
+        "//(o.o)\\\\\\"
+      ],
+      "error": [
+        "//(x.x)\\\\",
+        "\\\\(;.;)//"
+      ],
+      "sleeping": [
+        "//(-.-)\\\\ z",
+        "//(-.-)\\\\ Z"
+      ]
+    },
+    "caterpillar": {
+      "name": "Caterpillar",
+      "calm": [
+        "oooo(o.o)",
+        "oOoO(o.o)"
+      ],
+      "working": [
+        "oooo(O.O)",
+        "OoOo(O.O)"
+      ],
+      "agents": [
+        "oooo(o.o)/",
+        "oooo(o.o)\\"
+      ],
+      "error": [
+        "oooo(x.x)",
+        "oooo(;.;)"
+      ],
+      "sleeping": [
+        "oooo(-.-) z",
+        "oooo(-.-) Z"
+      ]
+    },
+    "snake": {
+      "name": "Snake",
+      "calm": [
+        "~~~~:>",
+        "~~~~:>-<"
+      ],
+      "working": [
+        "~~~~o>",
+        "~~~~O>"
+      ],
+      "agents": [
+        "~~~~:>/",
+        "~~~~:>\\"
+      ],
+      "error": [
+        "~~~~x>",
+        "~~~~;>"
+      ],
+      "sleeping": [
+        "~~~~-> z",
+        "~~~~-> Z"
+      ]
+    },
+    "ghost": {
+      "name": "Ghost",
+      "calm": [
+        "(o.o)~",
+        "(o.o)~~"
+      ],
+      "working": [
+        "(O.O)~",
+        "(o.O)~~"
+      ],
+      "agents": [
+        "(o.o)~/",
+        "(o.o)~\\"
+      ],
+      "error": [
+        "(x.x)~",
+        "(;.;)~"
+      ],
+      "sleeping": [
+        "(-.-)~ z",
+        "(-.-)~ Z"
+      ]
+    },
+    "hedgehog": {
+      "name": "Hedgehog",
+      "calm": [
+        ";;;;(o.o)",
+        ";;;;(o-o)"
+      ],
+      "working": [
+        ";;;;(O.O)",
+        ";;;;(o.O)"
+      ],
+      "agents": [
+        ";;;;(o.o)/",
+        ";;;;(o.o)\\"
+      ],
+      "error": [
+        ";;;;(x.x)",
+        ";;;;(;.;)"
+      ],
+      "sleeping": [
+        ";;;;(-.-) z",
+        ";;;;(-.-) Z"
+      ]
     }
-  },
-  "maxAgentes": 4
+  }
 }

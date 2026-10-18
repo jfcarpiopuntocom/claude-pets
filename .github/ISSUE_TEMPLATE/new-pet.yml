@@ -1,0 +1,18 @@
+name: New pet
+description: Ask for a new little animal (or draw it yourself)
+title: "New pet: "
+labels: ["new pet"]
+body:
+  - type: input
+    id: name
+    attributes: { label: "Which animal?", placeholder: "Capybara" }
+    validations: { required: true }
+  - type: textarea
+    id: drawing
+    attributes:
+      label: "Its ASCII face (optional)"
+      description: "One line, 20 characters max. Not sure? We will draw it."
+      placeholder: "chilling: (o..o)  on it: (O..O)  broke: (x..x)  napping: (-..-) z"
+  - type: textarea
+    id: why
+    attributes: { label: "Why does the world need it?" }
