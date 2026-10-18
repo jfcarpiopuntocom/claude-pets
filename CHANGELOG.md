@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.1 (Oct 18, 2026)
+## 1.3.1 (Oct 18, 2026)
 - She really moves now: `setup` asks for a redraw every second (`refreshInterval: 1`).
 - Remembers your agent team even in very long sessions.
 - Only worries when the last tool call failed; while agents work, the team wins.

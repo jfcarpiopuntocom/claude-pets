@@ -19,9 +19,13 @@ if (prev.command && !ours(prev.command)) {
   cfg.chain = prev.command;
   cfg.previousStatusLine = prev;
 } else if (ours(prev.command) && !cfg.chain) {
-  // coming from the other language's plugin (or the old mascota-statusline): inherit what it was keeping
-  for (const sib of ['claude-mascotas', 'claude-pets', 'mascota']) {
-    const c = readJson(path.join(dir, 'plugins', sib, 'config.json'), {});
+  // coming from the other language's plugin, or from a standalone mascota-statusline copy (its config sits next to
+  // its script): inherit the statusLine it was keeping
+  const script = (/"([^"]*mascota[^"]*\.js)"/.exec(prev.command) || [])[1];
+  const local = script ? [path.join(path.dirname(script), 'mascota.config.json')] : [];
+  for (const f of [...['claude-mascotas', 'claude-pets', 'mascota'].map((s) => path.join(dir, 'plugins', s, 'config.json')), ...local]) {
+    let c = {};
+    try { c = JSON.parse(fs.readFileSync(f, 'utf8').replace(/^﻿/, '')); } catch (e) {}
     const ch = c.chain || c.encadenar;
     if (ch && !ours(ch)) { cfg.chain = ch; if (c.previousStatusLine) cfg.previousStatusLine = c.previousStatusLine; break; }
   }

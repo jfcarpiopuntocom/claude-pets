@@ -110,6 +110,17 @@ s = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
 assert.strictEqual(s.statusLine.command, 'my-hud', 'remove restores your statusLine');
 assert(!fs.existsSync(path.join(tmp, 'plugins', 'claude-pets', 'launcher.js')), 'launcher removed');
 
+// moving from a standalone mascota-statusline copy keeps the statusLine that copy was chaining
+{
+  const cfgDir = fs.mkdtempSync(path.join(tmp, 'cfg-')), old = path.join(cfgDir, 'mascota-statusline');
+  fs.mkdirSync(old);
+  fs.writeFileSync(path.join(old, 'mascota.config.json'), JSON.stringify({ encadenar: 'old-hud' }));
+  fs.writeFileSync(path.join(cfgDir, 'settings.json'), JSON.stringify({ statusLine: { type: 'command', command: `exec "node" "${path.join(old, 'mascota.js').replace(/\\/g, '/')}"` } }));
+  const r = node('setup.js', [], { ...env, CLAUDE_CONFIG_DIR: cfgDir });
+  assert.strictEqual(r.status, 0, r.stdout + r.stderr);
+  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(cfgDir, 'plugins', 'claude-pets', 'config.json'), 'utf8')).chain, 'old-hud', 'inherits the old copy chain');
+}
+
 // launcher runs the newest installed version
 for (const v of ['0.9.0', '9.9.9']) {
   const d = path.join(tmp, 'plugins', 'cache', 'claude-pets', 'pets', v);
