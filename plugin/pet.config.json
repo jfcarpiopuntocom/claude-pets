@@ -4,11 +4,7 @@
   "color": true,
   "maxAgents": 4,
   "maxWidth": 100,
-  "signature": {
-    "enabled": true,
-    "glyph": "@",
-    "url": "https://jfcarpio.com"
-  },
+  "chainTimeoutMs": 4000,
   "chain": "",
   "thresholds": {
     "workingSec": 20,

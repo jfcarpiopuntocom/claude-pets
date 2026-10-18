@@ -66,7 +66,7 @@ One toggle, once: `/plugin` → **Marketplaces** → `claude-pets` → **Enable 
 
 ### 🤝 Already have a statusLine?
 
-`/pets:setup` keeps it (claude-hud, ccstatusline, your own…) and slips the pet in as **one** line right below the model line. It backs up your `settings.json` the first time and never overwrites that backup. If your statusLine takes longer than 1.5 s, the pet shows alone for that refresh instead of freezing.
+`/pets:setup` keeps it (claude-hud, ccstatusline, your own…) and slips the pet in as **one** line right below the model line. It backs up your `settings.json` the first time and never overwrites that backup. If your statusLine takes longer than 4 s, the pet shows alone for that refresh instead of freezing (tune it with `chainTimeoutMs`).
 
 ### 👋 Uninstall
 
@@ -143,10 +143,8 @@ Optional. Create `~/.claude/plugins/claude-pets/config.json` (or inside your `CL
 | `color` | colors per mood | `true` |
 | `maxAgents` | agents shown before `+n` | `4` |
 | `maxWidth` | max width when your terminal does not report it | `100` |
-| `signature.enabled` | the `@` | `true` |
 | `chain` | your previous statusLine, kept running | set by `setup` |
-
-**What is that orange `@`?** The author's signature: a tiny link to his site. Don't want it? `{ "signature": { "enabled": false } }`.
+| `chainTimeoutMs` | how long to wait for your previous statusLine | `4000` |
 
 ## 🧠 How it works
 

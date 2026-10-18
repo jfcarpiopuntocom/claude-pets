@@ -29,8 +29,7 @@ function readConfig() {
   for (const f of [path.join(configDir(), 'plugins', HOME, 'config.json'), process.env[ENV]].filter(Boolean)) {
     try { merge(base, JSON.parse(fs.readFileSync(f, 'utf8').replace(/^﻿/, ''))); } catch (e) {}
   }
-  // older Spanish keys still work
-  if (base.firma && !base.signature) base.signature = { enabled: base.firma.enabled, glyph: base.firma.glifo, url: base.firma.url };
+  // older Spanish key still works
   if (base.encadenar && !base.chain) base.chain = base.encadenar;
   if (!base.messages[base.lang]) base.lang = LANG;
   return base;
@@ -143,8 +142,6 @@ try {
   const key = state === 'agents' ? (team.length === 1 ? 'agents1' : 'agentsN') : state;
   const msg = ((ov && ov[key]) || cfg.messages[cfg.lang][key]).replace('{n}', team.length);
   const color = (c, s) => (cfg.color ? `\x1b[${c}m${s}\x1b[0m` : s);
-  const sig = cfg.signature && cfg.signature.enabled && cfg.signature.url
-    ? '  ' + color('38;5;214', `\x1b]8;;${cfg.signature.url}\x1b\\${cfg.signature.glyph || '@'}\x1b]8;;\x1b\\`) : '';
 
   // one line that always fits: show fewer agents (as +n) before cutting anything
   const cols = Number.parseInt(process.env.COLUMNS || '', 10);
@@ -153,7 +150,7 @@ try {
     let s = color({ calm: 36, working: 33, agents: 35, error: 31, sleeping: 90 }[state], `${cr[state][frame]} ${msg}`);
     if (k > 0) s += '  ' + color(35, team.slice(0, k).map((n, i) => `${cr.working[(frame + i) % 2]} ${n}`).join('  '));
     if (team.length > k) s += color(35, `  +${team.length - k}`);
-    return s + sig;
+    return s;
   };
   let k = Math.min(team.length, cfg.maxAgents || 4);
   line = build(k);
@@ -166,13 +163,13 @@ try {
 function out(s) { process.stdout.write(s, () => process.exit(0)); }
 
 // chained with another statusLine (e.g. claude-hud): the pet goes in as ONE line right below the model line.
-// If that statusLine is slow or hangs, the pet shows alone after 1.5 s instead of freezing.
+// If that statusLine is slow or hangs, the pet shows alone after chainTimeoutMs instead of freezing.
 const chain = cfg && cfg.chain;
 if (!chain) out(line);
 else {
   let done = false, o = '';
   const finish = (s) => { if (!done) { done = true; out(s); } };
-  const timer = setTimeout(() => finish(line), 1500);
+  const timer = setTimeout(() => finish(line), (cfg && cfg.chainTimeoutMs) || 4000);
   try {
     const ch = spawn(chain, { shell: true, windowsHide: true, stdio: ['pipe', 'pipe', 'ignore'] });
     ch.stdout.on('data', (d) => { o += d; });
