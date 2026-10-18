@@ -91,6 +91,11 @@ const second = Object.keys(base.creatures)[1];
 assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, 'plugins', 'claude-pets', 'config.json'), 'utf8')).creature, second);
 assert.notStrictEqual(node('pick.js', ['unicornio-de-pluton']).status, 0);
 
+// pick by number
+{ const r = node('pick.js', ['3']); assert.strictEqual(r.status, 0, r.stdout + r.stderr); }
+assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, 'plugins', 'claude-pets', 'config.json'), 'utf8')).creature, Object.keys(base.creatures)[2]);
+assert.notStrictEqual(node('pick.js', ['99']).status, 0);
+
 // setup twice keeps the original backup and statusLine; remove puts it back
 const settingsPath = path.join(tmp, 'settings.json');
 fs.writeFileSync(settingsPath, JSON.stringify({ theme: 'dark', statusLine: { type: 'command', command: 'my-hud', padding: 2, refreshInterval: 5 } }));

@@ -4,7 +4,7 @@
 
 # claude-pets
 
-**A tiny ASCII kitty that keeps you company in the Claude Code statusLine.**<br>
+**24 tiny ASCII pets that keep you company in the Claude Code statusLine.**<br>
 She takes **exactly one line**. Always. By design. And when your agent team gets to work, every agent shows up beside her with its real name.
 
   <a href="https://github.com/jfcarpiopuntocom/claude-pets/actions/workflows/test.yml"><img src="https://github.com/jfcarpiopuntocom/claude-pets/actions/workflows/test.yml/badge.svg" alt="tests"></a>
@@ -26,7 +26,7 @@ An ASCII pet that lives in your [Claude Code](https://code.claude.com) statusLin
 
 <p align="center"><img src="assets/demo.gif" alt="The kitty in the statusLine: purring, working, keeping 3 named agents company, worrying, napping" width="816"></p>
 
-| When… | The kitty |
+| When… | The kitty (the default) |
 |---|---|
 | nothing is happening | `=^.^= purring` |
 | Claude is working | `=^o^= on it...` |
@@ -47,7 +47,7 @@ Inside Claude Code:
 /pets:setup
 ```
 
-Say hi to your kitty.
+Say hi to your pet: the kitty comes first, and there are 24 to pick from with `/pets`.
 
 <details>
 <summary><b>Prefer the terminal?</b></summary>
@@ -82,45 +82,54 @@ One toggle, once: `/plugin` → **Marketplaces** → `claude-pets` → **Enable 
 
 24 to start with. This is just the beginning.
 
-<p align="center"><img src="assets/parade.gif" alt="Pet parade: dog, owl, octopus, otaku kitten, crab, robot, frog, hedgehog, dragon and penguin, each with its own line" width="816"></p>
 
 <!-- gallery:start -->
-| Pet | Chilling | On it | Something broke | Napping | Key |
-|---|---|---|---|---|---|
-| **Kitty** | `=^.^=` <sub>purring</sub> | `=^o^=` | `=;.;=` | `=-.-= Zzz` | `kitty` |
-| **Dog** | `U(^w^)U` <sub>woof! right here</sub> | `U(*w*)U!` | `U(;w;)U` | `U(-w-)U Zzz` | `dog` |
-| **Owl** | `{^,^}` <sub>hoo-hoo...</sub> | `{O,O}` | `{@,@}` | `{-,-} Zzz` | `owl` |
-| **Dragon** | `<^.^>~` <sub>guarding the hoard</sub> | `<^O^>==*` | `<@.@>~` | `<-.->~ Zzz` | `dragon` |
-| **Bunny** | `(\^x^/)` <sub>ears up</sub> | `(\OxO/)` | `(\;x;/)` | `(\-x-/) Zzz` | `bunny` |
-| **Penguin** | `<(^v^)>` <sub>tux on, all set</sub> | `<(OvO)>` | `<(;v;)>` | `<(-v-)> Zzz` | `penguin` |
-| **Fish** | `><(((^>` <sub>blub, swimming...</sub> | `><(((*> o` | `><(((x>` | `><(((-> Zzz` | `fish` |
-| **Octopus** | `~{^o^}~` <sub>eight arms free</sub> | `~{>o<}~~` | `~{x_x}~ :::` | `~{-o-}~ Zzz` | `octopus` |
-| **Mouse** | `<:3 )~` <sub>squeak, cheese?</sub> | `<:3 )~ ==` | `<;3 )~` | `<-3 )~ Zzz` | `mouse` |
-| **Pig** | `(^oo^)` <sub>oink, all good</sub> | `(>OO<)` | `(TooT)` | `(-oo-) Zzz` | `pig` |
-| **Frog** | `(o)__(o)` <sub>ribbit, chillin</sub> | `(o)__(o)-----*` | `(;)__(;)` | `(-)__(-) Zzz` | `frog` |
-| **Robot** | `[^_^]` <sub>beep boop, online</sub> | `[0_1]` | `[x_x]~` | `[-_-] Zzz` | `robot` |
-| **Otaku kitten** | `(=^w^=)` <sub>nyaa~</sub> | `(=>w<=)` | `(=XwX=)` | `(=-w-=) Zzz` | `otaku` |
-| **Monkey** | `@('_')@` <sub>ooh-ooh, banana?</sub> | `@(*o*)@` | `@(;_;)@` | `@(-_-)@ Zzz` | `monkey` |
-| **Bear** | `c(^(I)^)c` <sub>bear hug</sub> | `c(*(I)*)c` | `c(T(I)T)c` | `c(-(I)-)c Zzz` | `bear` |
-| **Bird** | `(^>` <sub>tweet tweet~</sub> | `\(o>` | `(x>` | `(-> Zzz` | `bird` |
-| **Duck** | `__(.)<` <sub>quack, floating</sub> | `~__(o)<` | `__(x)<` | `__(-)< Zzz` | `duck` |
-| **Crab** | `(\/)(^,,^)(\/)` <sub>snip snip, sideways</sub> | `(\/)(O,,O)(\/)` | `(\/)(;,,;)(\/)` | `(V)(-,,-)(V) Zzz` | `crab` |
-| **Bat** | `/\(^.^)/\` <sub>night flight</sub> | `/\(>.<)/\` | `/\(x.x)/\` | `\/(-.-)\/ Zzz` | `bat` |
-| **Spider** | `/\/(^^^^)\/\` <sub>chilling on the web</sub> | `/\/(OOOO)\/\` | `/\/(xxxx)\/\` | `/\/(----)\/\ Zzz` | `spider` |
-| **Caterpillar** | `oOoO('u')` <sub>nom, a leaf</sub> | `oOoO(OuO)` | `oooo(;u;)` | `oooo(-u-) Zzz` | `caterpillar` |
-| **Snake** | `~~~~:>` <sub>sss, sunbathing</sub> | `~/\/\/:>` | `~~~~x>` | `@@~-> Zzz` | `snake` |
-| **Ghost** | `~~(O.O)` <sub>floating, ooOOoo</sub> | `~~(OoO) boo!` | `~~(x.x)` | `~~(-.-) Zzz` | `ghost` |
-| **Hedgehog** | `MMMM(^.^)` <sub>sniff sniff</sub> | `MMMM(>.<)` | `MMMM(;.;)` | `MMMM(-.-) Zzz` | `hedgehog` |
+<p align="center"><img src="assets/gallery.svg" alt="Pet gallery in all five moods, in the same colors as the terminal" width="100%"></p>
+
+<details>
+<summary><b>Show the gallery as text (to copy the names)</b></summary>
+
+| # | Pet | Chilling | On it | Something broke | Napping | Key |
+|---|---|---|---|---|---|---|
+| 1 | **Kitty** | `=^.^=` <sub>purring</sub> | `=^o^=` | `=;.;=` | `=-.-= Zzz` | `kitty` |
+| 2 | **Dog** | `U(^w^)U` <sub>woof! right here</sub> | `U(*w*)U!` | `U(;w;)U` | `U(-w-)U Zzz` | `dog` |
+| 3 | **Owl** | `{^,^}` <sub>hoo-hoo...</sub> | `{O,O}` | `{@,@}` | `{-,-} Zzz` | `owl` |
+| 4 | **Dragon** | `<^.^>~` <sub>guarding the hoard</sub> | `<^O^>==*` | `<@.@>~` | `<-.->~ Zzz` | `dragon` |
+| 5 | **Bunny** | `(\^x^/)` <sub>ears up</sub> | `(\OxO/)` | `(\;x;/)` | `(\-x-/) Zzz` | `bunny` |
+| 6 | **Penguin** | `<(^v^)>` <sub>tux on, all set</sub> | `<(OvO)>` | `<(;v;)>` | `<(-v-)> Zzz` | `penguin` |
+| 7 | **Fish** | `><(((^>` <sub>blub, swimming...</sub> | `><(((*> o` | `><(((x>` | `><(((-> Zzz` | `fish` |
+| 8 | **Octopus** | `~{^o^}~` <sub>eight arms free</sub> | `~{>o<}~~` | `~{x_x}~ :::` | `~{-o-}~ Zzz` | `octopus` |
+| 9 | **Mouse** | `<:3 )~` <sub>squeak, cheese?</sub> | `<:3 )~ ==` | `<;3 )~` | `<-3 )~ Zzz` | `mouse` |
+| 10 | **Pig** | `(^oo^)` <sub>oink, all good</sub> | `(>OO<)` | `(TooT)` | `(-oo-) Zzz` | `pig` |
+| 11 | **Frog** | `(o)__(o)` <sub>ribbit, chillin</sub> | `(o)__(o)-----*` | `(;)__(;)` | `(-)__(-) Zzz` | `frog` |
+| 12 | **Robot** | `[^_^]` <sub>beep boop, online</sub> | `[0_1]` | `[x_x]~` | `[-_-] Zzz` | `robot` |
+| 13 | **Otaku kitten** | `(=^w^=)` <sub>nyaa~</sub> | `(=>w<=)` | `(=XwX=)` | `(=-w-=) Zzz` | `otaku` |
+| 14 | **Monkey** | `@('_')@` <sub>ooh-ooh, banana?</sub> | `@(*o*)@` | `@(;_;)@` | `@(-_-)@ Zzz` | `monkey` |
+| 15 | **Bear** | `c(^(I)^)c` <sub>bear hug</sub> | `c(*(I)*)c` | `c(T(I)T)c` | `c(-(I)-)c Zzz` | `bear` |
+| 16 | **Bird** | `(^>` <sub>tweet tweet~</sub> | `\(o>` | `(x>` | `(-> Zzz` | `bird` |
+| 17 | **Duck** | `__(.)<` <sub>quack, floating</sub> | `~__(o)<` | `__(x)<` | `__(-)< Zzz` | `duck` |
+| 18 | **Crab** | `(\/)(^,,^)(\/)` <sub>snip snip, sideways</sub> | `(\/)(O,,O)(\/)` | `(\/)(;,,;)(\/)` | `(V)(-,,-)(V) Zzz` | `crab` |
+| 19 | **Bat** | `/\(^.^)/\` <sub>night flight</sub> | `/\(>.<)/\` | `/\(x.x)/\` | `\/(-.-)\/ Zzz` | `bat` |
+| 20 | **Spider** | `/\/(^^^^)\/\` <sub>chilling on the web</sub> | `/\/(OOOO)\/\` | `/\/(xxxx)\/\` | `/\/(----)\/\ Zzz` | `spider` |
+| 21 | **Caterpillar** | `oOoO('u')` <sub>nom, a leaf</sub> | `oOoO(OuO)` | `oooo(;u;)` | `oooo(-u-) Zzz` | `caterpillar` |
+| 22 | **Snake** | `~~~~:>` <sub>sss, sunbathing</sub> | `~/\/\/:>` | `~~~~x>` | `@@~-> Zzz` | `snake` |
+| 23 | **Ghost** | `~~(O.O)` <sub>floating, ooOOoo</sub> | `~~(OoO) boo!` | `~~(x.x)` | `~~(-.-) Zzz` | `ghost` |
+| 24 | **Hedgehog** | `MMMM(^.^)` <sub>sniff sniff</sub> | `MMMM(>.<)` | `MMMM(;.;)` | `MMMM(-.-) Zzz` | `hedgehog` |
+
+</details>
 <!-- gallery:end -->
 
 <a id="pick"></a>
 ## 🎲 Pick a pet
 
 ```
-/pets:pick               # list them all
-/pets:pick octopus       # pick one
-/pets:pick random        # let fate decide
+/pets               # list all 24, numbered
+/pets 22            # by number (1 to 24)
+/pets octopus       # by name
+/pets random        # let fate decide
 ```
+
+To try them all: `/pets 1`, `/pets 2`… up to `/pets 24`. If another plugin already uses `/pets`, type `/pets:pets`.
 
 Your agent team comes in the same species: pick octopus and your strategist is an octopus. As it should be.
 
@@ -161,9 +170,9 @@ No dependencies, no network, no telemetry. It only reads what was added to your 
 
 ## 🗺️ Roadmap
 
-- [x] One-line kitty
+- [x] One-line pets
 - [x] One little pet per agent, with its real name
-- [x] 24 pets and `/pets:pick`
+- [x] 24 pets: `/pets 22`, `/pets octopus`, `/pets random`
 - [x] Automatic updates
 - [ ] Dozens more (missing one? [ask for it](https://github.com/jfcarpiopuntocom/claude-pets/issues/new?template=new-pet.yml))
 - [ ] Seasonal pets
