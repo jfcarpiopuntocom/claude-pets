@@ -4,9 +4,10 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
-const { creatures } = JSON.parse(fs.readFileSync(path.join(root, 'plugin', 'pet.config.json'), 'utf8'));
+const cfg = JSON.parse(fs.readFileSync(path.join(root, 'plugin', 'pet.config.json'), 'utf8'));
 const c = (s) => '`' + s + '`';
-const rows = Object.entries(creatures).map(([k, v]) => `| ${v.name} | ${c(v.calm[0])} | ${c(v.working[0])} | ${c(v.error[0])} | ${c(v.sleeping[0])} | ${c(k)} |`);
+const say = (v, k) => (v.messages && v.messages['en'] && v.messages['en'][k]) || cfg.messages['en'][k];
+const rows = Object.entries(cfg.creatures).map(([k, v]) => `| **${v.name}** | ${c(v.calm[0])} <sub>${say(v, 'calm')}</sub> | ${c(v.working[0])} | ${c(v.error[0])} | ${c(v.sleeping[0])} | ${c(k)} |`);
 const table = ['| Pet | Chilling | On it | Something broke | Napping | Key |', '|---|---|---|---|---|---|', ...rows].join('\n');
 const readme = path.join(root, 'README.md');
 const s = fs.readFileSync(readme, 'utf8');

@@ -13,11 +13,12 @@ Thank you! The loveliest way to help is **adding a pet**.
      "working":  ["(O..O)", "(o..O)"],
      "agents":   ["(o..o)/", "(o..o)\\"],
      "error":    ["(x..x)", "(;..;)"],
-     "sleeping": ["(-..-) z", "(-..-) Z"]
+     "sleeping": ["(-..-) Zzz", "(-..-) zZz"],
+     "messages": { "en": { "calm": "totally chill" }, "es": { "calm": "chill total" } }
    }
    ```
 
-   Rules: 2 frames per mood, **ASCII only**, 20 characters max. One line, always.
+   Rules: 2 frames per mood (they alternate every second: blink, wag, flap), **ASCII only**, 20 characters max, no `|`. `messages` is optional. One line, always.
 2. `node scripts/gallery.js` to refresh the README gallery.
 3. `node plugin/test.js` must print `PASS`.
 4. Bump `version` in `plugin/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`.

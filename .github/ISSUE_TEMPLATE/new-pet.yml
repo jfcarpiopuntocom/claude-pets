@@ -12,7 +12,7 @@ body:
     attributes:
       label: "Its ASCII face (optional)"
       description: "One line, 20 characters max. Not sure? We will draw it."
-      placeholder: "chilling: (o..o)  on it: (O..O)  broke: (x..x)  napping: (-..-) z"
+      placeholder: "chilling: (o..o)  on it: (O..O)  broke: (x..x)  napping: (-..-) Zzz"
   - type: textarea
     id: why
     attributes: { label: "Why does the world need it?" }

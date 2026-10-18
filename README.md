@@ -5,7 +5,7 @@
 # claude-pets
 
 **A tiny ASCII kitty that keeps you company in the Claude Code statusLine.**<br>
-She takes **exactly one line**. Always. By design. And when your agent team gets to work, every agent gets its own little pet with its real name.
+She takes **exactly one line**. Always. By design. And when your agent team gets to work, every agent shows up beside her with its real name.
 
   <a href="https://github.com/jfcarpiopuntocom/claude-pets/actions/workflows/test.yml"><img src="https://github.com/jfcarpiopuntocom/claude-pets/actions/workflows/test.yml/badge.svg" alt="tests"></a>
   <img src="https://img.shields.io/badge/pets-24-ff69b4" alt="24">
@@ -14,7 +14,7 @@ She takes **exactly one line**. Always. By design. And when your agent team gets
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="0">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT"></a>
 
-[Install](#-install) · [Gallery](#-gallery) · [Pick a pet](#-pick-a-pet) · [FAQ](#-questions-nobody-asked) · [Español](https://github.com/jfcarpiopuntocom/claude-mascotas)
+[Install](#install) · [Gallery](#gallery) · [Pick a pet](#pick) · [FAQ](#faq) · [Español](https://github.com/jfcarpiopuntocom/claude-mascotas)
 
 </div>
 
@@ -24,22 +24,19 @@ She takes **exactly one line**. Always. By design. And when your agent team gets
 
 An ASCII pet that lives in your [Claude Code](https://code.claude.com) statusLine and reacts to what is going on:
 
-```
-[Opus 5.5] │ my-project git:(main)
-=^o^= on it...  @
-Context ███░░░░░░░ 32%
-```
+<p align="center"><img src="assets/demo.gif" alt="The kitty in the statusLine: purring, working, keeping 3 named agents company, worrying, napping" width="816"></p>
 
 | When… | The kitty |
 |---|---|
 | nothing is happening | `=^.^= purring` |
 | Claude is working | `=^o^= on it...` |
 | your agent team is at work | `=^.^=/ 2 agents working  =^o^= strategist  =^O^= researcher` |
-| something broke | `=;.;= something broke, take a look` |
-| you have been away a while | `=-.-= z napping... zzz` |
+| the last tool call failed | `=;.;= something broke, take a look` |
+| you have been away a while | `=-.-= Zzz napping...` |
 
-Frames alternate every second, so she **blinks, breathes and dozes off**.
+She moves on her own: `setup` asks Claude Code to redraw her every second, so she **blinks, breathes and dozes off**.
 
+<a id="install"></a>
 ## 🚀 Install
 
 Inside Claude Code:
@@ -50,12 +47,10 @@ Inside Claude Code:
 /pets:setup
 ```
 
-Restart Claude Code. Say hi to your kitty.
+Say hi to your kitty.
 
 <details>
-<summary><b>Can't type <code>/</code>?</b></summary>
-
-From any terminal:
+<summary><b>Prefer the terminal?</b></summary>
 
 ```
 claude plugin marketplace add jfcarpiopuntocom/claude-pets
@@ -67,45 +62,58 @@ Then open Claude Code and ask it: *"run the pets setup command"*.
 
 ### 🔄 Automatic updates
 
-`/plugin` → **Marketplaces** → `claude-pets` → **Enable auto-update**. Done: every new pet reaches you on its own. Your statusLine points at a fixed launcher that always runs the newest installed version, so you never set it up twice.
+One toggle, once: `/plugin` → **Marketplaces** → `claude-pets` → **Enable auto-update**. From then on every new pet reaches you on its own. Your statusLine points at a fixed launcher that always runs the newest installed version, so you never set it up twice.
 
 ### 🤝 Already have a statusLine?
 
-`/pets:setup` keeps it (claude-hud, ccstatusline, your own…) and slips the pet in as **one** line right below the model line. It backs up your `settings.json` first.
+`/pets:setup` keeps it (claude-hud, ccstatusline, your own…) and slips the pet in as **one** line right below the model line. It backs up your `settings.json` the first time and never overwrites that backup. If your statusLine takes longer than 1.5 s, the pet shows alone for that refresh instead of freezing.
 
-## 🖼️ Gallery
+### 👋 Uninstall
+
+```
+/pets:remove
+/plugin uninstall pets@claude-pets
+```
+
+`/pets:remove` puts back the statusLine you had before. Your chosen pet stays saved in case you come back.
+
+<a id="gallery"></a>
+## 🎨 Gallery
 
 24 to start with. This is just the beginning.
+
+<p align="center"><img src="assets/parade.gif" alt="Pet parade: dog, owl, octopus, otaku kitten, crab, robot, frog, hedgehog, dragon and penguin, each with its own line" width="816"></p>
 
 <!-- gallery:start -->
 | Pet | Chilling | On it | Something broke | Napping | Key |
 |---|---|---|---|---|---|
-| Kitty | `=^.^=` | `=^o^=` | `=;.;=` | `=-.-= z` | `kitty` |
-| Dog | `U'.'U` | `U'o'U` | `U;.;U` | `U-.-U z` | `dog` |
-| Owl | `{o,o}` | `{O,O}` | `{@,@}` | `{-,-} z` | `owl` |
-| Dragon | `<^.^>~` | `<^o^>~~` | `<x.x>~` | `<-.->~ z` | `dragon` |
-| Bunny | `(='.'=)` | `(='o'=)` | `(=;.;=)` | `(=-.-=) z` | `bunny` |
-| Penguin | `<('.')>` | `<('o')>` | `<(;.;)>` | `<(-.-)> z` | `penguin` |
-| Fish | `><(('>` | `><((o>` | `><((x>` | `><((-> z` | `fish` |
-| Octopus | `~(o.o)~` | `~(O.O)~` | `~(x.x)~` | `~(-.-)~ z` | `octopus` |
-| Mouse | `<:3 )~` | `<:o )~` | `<:x )~` | `<:- )~ z` | `mouse` |
-| Pig | `(^oo^)` | `(^OO^)` | `(xoox)` | `(-oo-) z` | `pig` |
-| Frog | `(@..@)` | `(@oo@)` | `(x..x)` | `(-..-) z` | `frog` |
-| Robot | `[o_o]` | `[O_O]` | `[x_x]` | `[-_-] z` | `robot` |
-| Alien | `(@_@)` | `(@o@)` | `(x_x)` | `(-_-) z` | `alien` |
-| Monkey | `@('_')@` | `@('o')@` | `@(x_x)@` | `@(-_-)@ z` | `monkey` |
-| Bear | `c(^.^)c` | `c(^o^)c` | `c(x.x)c` | `c(-.-)c z` | `bear` |
-| Bird | `(.>` | `(o>` | `(x>` | `(-> z` | `bird` |
-| Duck | `__(.)<` | `__(o)<` | `__(x)<` | `__(-)< z` | `duck` |
-| Crab | `(\/)(o,,o)(\/)` | `(\/)(O,,O)(\/)` | `(\/)(x,,x)(\/)` | `(\/)(-,,-)(\/) z` | `crab` |
-| Bat | `/\(o.o)/\` | `/\(O.O)/\` | `/\(x.x)/\` | `\/(-.-)\/ z` | `bat` |
-| Spider | `//(o.o)\\` | `//(O.O)\\` | `//(x.x)\\` | `//(-.-)\\ z` | `spider` |
-| Caterpillar | `oooo(o.o)` | `oooo(O.O)` | `oooo(x.x)` | `oooo(-.-) z` | `caterpillar` |
-| Snake | `~~~~:>` | `~~~~o>` | `~~~~x>` | `~~~~-> z` | `snake` |
-| Ghost | `(o.o)~` | `(O.O)~` | `(x.x)~` | `(-.-)~ z` | `ghost` |
-| Hedgehog | `;;;;(o.o)` | `;;;;(O.O)` | `;;;;(x.x)` | `;;;;(-.-) z` | `hedgehog` |
+| **Kitty** | `=^.^=` <sub>purring</sub> | `=^o^=` | `=;.;=` | `=-.-= Zzz` | `kitty` |
+| **Dog** | `U(^w^)U` <sub>woof! right here</sub> | `U(*w*)U!` | `U(;w;)U` | `U(-w-)U Zzz` | `dog` |
+| **Owl** | `{^,^}` <sub>hoo-hoo...</sub> | `{O,O}` | `{@,@}` | `{-,-} Zzz` | `owl` |
+| **Dragon** | `<^.^>~` <sub>guarding the hoard</sub> | `<^O^>==*` | `<@.@>~` | `<-.->~ Zzz` | `dragon` |
+| **Bunny** | `(\^x^/)` <sub>ears up</sub> | `(\OxO/)` | `(\;x;/)` | `(\-x-/) Zzz` | `bunny` |
+| **Penguin** | `<(^v^)>` <sub>tux on, all set</sub> | `<(OvO)>` | `<(;v;)>` | `<(-v-)> Zzz` | `penguin` |
+| **Fish** | `><(((^>` <sub>blub, swimming...</sub> | `><(((*> o` | `><(((x>` | `><(((-> Zzz` | `fish` |
+| **Octopus** | `~{^o^}~` <sub>eight arms free</sub> | `~{>o<}~~` | `~{x_x}~ :::` | `~{-o-}~ Zzz` | `octopus` |
+| **Mouse** | `<:3 )~` <sub>squeak, cheese?</sub> | `<:3 )~ ==` | `<;3 )~` | `<-3 )~ Zzz` | `mouse` |
+| **Pig** | `(^oo^)` <sub>oink, all good</sub> | `(>OO<)` | `(TooT)` | `(-oo-) Zzz` | `pig` |
+| **Frog** | `(o)__(o)` <sub>ribbit, chillin</sub> | `(o)__(o)-----*` | `(;)__(;)` | `(-)__(-) Zzz` | `frog` |
+| **Robot** | `[^_^]` <sub>beep boop, online</sub> | `[0_1]` | `[x_x]~` | `[-_-] Zzz` | `robot` |
+| **Otaku kitten** | `(=^w^=)` <sub>nyaa~</sub> | `(=>w<=)` | `(=XwX=)` | `(=-w-=) Zzz` | `otaku` |
+| **Monkey** | `@('_')@` <sub>ooh-ooh, banana?</sub> | `@(*o*)@` | `@(;_;)@` | `@(-_-)@ Zzz` | `monkey` |
+| **Bear** | `c(^(I)^)c` <sub>bear hug</sub> | `c(*(I)*)c` | `c(T(I)T)c` | `c(-(I)-)c Zzz` | `bear` |
+| **Bird** | `(^>` <sub>tweet tweet~</sub> | `\(o>` | `(x>` | `(-> Zzz` | `bird` |
+| **Duck** | `__(.)<` <sub>quack, floating</sub> | `~__(o)<` | `__(x)<` | `__(-)< Zzz` | `duck` |
+| **Crab** | `(\/)(^,,^)(\/)` <sub>snip snip, sideways</sub> | `(\/)(O,,O)(\/)` | `(\/)(;,,;)(\/)` | `(V)(-,,-)(V) Zzz` | `crab` |
+| **Bat** | `/\(^.^)/\` <sub>night flight</sub> | `/\(>.<)/\` | `/\(x.x)/\` | `\/(-.-)\/ Zzz` | `bat` |
+| **Spider** | `/\/(^^^^)\/\` <sub>chilling on the web</sub> | `/\/(OOOO)\/\` | `/\/(xxxx)\/\` | `/\/(----)\/\ Zzz` | `spider` |
+| **Caterpillar** | `oOoO('u')` <sub>nom, a leaf</sub> | `oOoO(OuO)` | `oooo(;u;)` | `oooo(-u-) Zzz` | `caterpillar` |
+| **Snake** | `~~~~:>` <sub>sss, sunbathing</sub> | `~/\/\/:>` | `~~~~x>` | `@@~-> Zzz` | `snake` |
+| **Ghost** | `~~(O.O)` <sub>floating, ooOOoo</sub> | `~~(OoO) boo!` | `~~(x.x)` | `~~(-.-) Zzz` | `ghost` |
+| **Hedgehog** | `MMMM(^.^)` <sub>sniff sniff</sub> | `MMMM(>.<)` | `MMMM(;.;)` | `MMMM(-.-) Zzz` | `hedgehog` |
 <!-- gallery:end -->
 
+<a id="pick"></a>
 ## 🎲 Pick a pet
 
 ```
@@ -118,11 +126,11 @@ Your agent team comes in the same species: pick octopus and your strategist is a
 
 ## 👥 Your agent team
 
-When Claude launches agents, each one shows up with its **real name or role** (the one you gave it, or its type), side by side, on the same line. When they finish, they leave. More than 4? You see `+n`. If the line does not fit your terminal it is cut with `…`: it never takes two lines.
+When Claude launches agents, each one shows up with its **real name or role** (the one you gave it, or its type), side by side, on the same line. When they finish, they leave. The pet remembers them even in very long sessions. If they do not all fit you see `+n`, and if the line still does not fit it is cut with `…`: **it never takes two lines**.
 
-## ⚙️ Settings
+## 🔧 Settings
 
-Optional. Create `~/.claude/plugins/claude-pets/config.json` (or inside your `CLAUDE_CONFIG_DIR`). It survives updates.
+Optional. Create `~/.claude/plugins/claude-pets/config.json` (or inside your `CLAUDE_CONFIG_DIR`). It survives updates, and you only need the keys you want to change.
 
 ```json
 { "creature": "owl", "lang": "en", "color": true, "maxAgents": 4 }
@@ -130,25 +138,28 @@ Optional. Create `~/.claude/plugins/claude-pets/config.json` (or inside your `CL
 
 | Option | What it does | Default |
 |---|---|---|
-| `creature` | the pet (see [Gallery](#-gallery)) | `kitty` |
+| `creature` | the pet (see [Gallery](#gallery)) | `kitty` |
 | `lang` | `en` or `es` | `en` |
 | `color` | colors per mood | `true` |
 | `maxAgents` | agents shown before `+n` | `4` |
-| `firma.enabled` | the `@` link to the author | `true` |
-| `encadenar` | another statusLine to keep | set by `setup` |
+| `maxWidth` | max width when your terminal does not report it | `100` |
+| `signature.enabled` | the `@` | `true` |
+| `chain` | your previous statusLine, kept running | set by `setup` |
+
+**What is that orange `@`?** The author's signature: a tiny link to his site. Don't want it? `{ "signature": { "enabled": false } }`.
 
 ## 🧠 How it works
 
 ```mermaid
 flowchart LR
-  CC[Claude Code] -->|JSON on stdin| L[launcher.js<br>fixed]
+  CC[Claude Code] -->|JSON on stdin, every second| L[launcher.js<br>fixed]
   L -->|newest version| M[pet.js]
-  M -->|reads the tail| T[(transcript)]
+  M -->|reads what is new| T[(transcript)]
   M -->|optional| H[your previous statusLine]
   M --> O[exactly one line]
 ```
 
-No dependencies, no network, no telemetry. It only reads the tail of your session transcript to know whether Claude is working, whether something failed, and which agents are active. If anything goes wrong it prints `=^.^=` and moves on: **it never breaks your statusLine**.
+No dependencies, no network, no telemetry. It only reads what was added to your session transcript since last time (and notes in a tiny per-session file which agents are still active) to know whether Claude is working, whether the last tool call failed, and who on your team is still busy. If anything goes wrong it prints `=^.^=` and moves on: **it never breaks your statusLine**.
 
 ## 🗺️ Roadmap
 
@@ -160,6 +171,7 @@ No dependencies, no network, no telemetry. It only reads the tail of your sessio
 - [ ] Seasonal pets
 - [ ] Moods by time of day
 
+<a id="faq"></a>
 ## ❓ Questions nobody asked
 
 **Why does this exist?** It was a side project to learn Claude Code. It got slightly out of hand.
@@ -168,7 +180,7 @@ No dependencies, no network, no telemetry. It only reads the tail of your sessio
 
 **Can she take two lines?** No. She's a cat, not a novel.
 
-**Windows, macOS, Linux?** Yes. She only needs Node, which Claude Code already brought into your life.
+**Windows, macOS, Linux?** Yes, tested on all three on every change. She only needs Node.
 
 **Does it do anything useful?** It tells you when Claude is working, when something broke, and who on your team is still busy. And it keeps you company. That counts.
 

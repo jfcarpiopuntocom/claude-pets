@@ -1,37 +1,38 @@
 #!/usr/bin/env node
-// /pets:setup: copies the fixed launcher and points your statusLine at it. If you already had another
-// statusLine (e.g. claude-hud), it is kept in "encadenar" and the pet goes in as ONE line below the model line.
+// /pets:setup: copies the fixed launcher and points your statusLine at it (refreshing every second so the pet
+// blinks). Your previous statusLine is kept: it keeps running, and the pet goes in as ONE line below the model line.
 'use strict';
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
+const { dir, home, ours, readJson, writeJson, settingsPath, cfgPath, launcher } = require('./comun.js');
 
-const env = (process.env.CLAUDE_CONFIG_DIR || '').trim();
-const dir = env ? env.replace(/^~(?=$|[\\/])/, os.homedir()) : path.join(os.homedir(), '.claude');
-const home = path.join(dir, 'plugins', 'claude-pets');
-const launcher = path.join(home, 'launcher.js');
-const settingsPath = path.join(dir, 'settings.json');
-const cfgPath = path.join(home, 'config.json');
-
+const settings = readJson(settingsPath, {});
+const cfg = readJson(cfgPath, {});
 fs.mkdirSync(home, { recursive: true });
 fs.copyFileSync(path.join(__dirname, 'launcher.js'), launcher);
+if (fs.existsSync(settingsPath) && !fs.existsSync(settingsPath + '.bak-claude-pets')) fs.copyFileSync(settingsPath, settingsPath + '.bak-claude-pets');
 
-let settings = {};
-if (fs.existsSync(settingsPath)) {
-  settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8').replace(/^\uFEFF/, '')); // invalid JSON: stop without touching anything
-  fs.copyFileSync(settingsPath, settingsPath + '.bak-claude-pets');
+const prev = settings.statusLine || {};
+if (cfg.encadenar && !cfg.chain) cfg.chain = cfg.encadenar;
+delete cfg.encadenar;
+if (prev.command && !ours(prev.command)) {
+  cfg.chain = prev.command;
+  cfg.previousStatusLine = prev;
+} else if (ours(prev.command) && !cfg.chain) {
+  // coming from the other language's plugin (or the old mascota-statusline): inherit what it was keeping
+  for (const sib of ['claude-mascotas', 'claude-pets', 'mascota']) {
+    const c = readJson(path.join(dir, 'plugins', sib, 'config.json'), {});
+    const ch = c.chain || c.encadenar;
+    if (ch && !ours(ch)) { cfg.chain = ch; if (c.previousStatusLine) cfg.previousStatusLine = c.previousStatusLine; break; }
+  }
 }
-const q = (p) => `"${p.replace(/\\/g, '/')}"`;
-const ours = `${q(process.execPath)} ${q(launcher)}`;
-const previous = settings.statusLine && settings.statusLine.command;
+writeJson(cfgPath, cfg);
 
-let cfg = {};
-try { cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf8')); } catch (e) {}
-if (previous && !/claude-mascotas|claude-pets|mascota-statusline/.test(previous)) cfg.encadenar = previous;
-fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 2));
-
-settings.statusLine = { type: 'command', command: ours, padding: 0 };
-fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2));
-console.log(`=^.^= done. statusLine -> ${ours}`);
-if (cfg.encadenar) console.log('Your previous statusLine is kept: the pet sits on one line right below the model line.');
+// plain `node` from PATH: works in bash, cmd and PowerShell, and survives node upgrades
+const command = `node "${launcher.replace(/\\/g, '/')}"`;
+settings.statusLine = { ...prev, type: 'command', command, refreshInterval: prev.refreshInterval && prev.refreshInterval < 1 ? prev.refreshInterval : 1 };
+writeJson(settingsPath, settings);
+console.log(`=^.^= done. statusLine -> ${command}`);
+if (cfg.chain) console.log('Your previous statusLine keeps running: the pet sits on one line right below the model line.');
 console.log(`Backup: ${settingsPath}.bak-claude-pets · Your settings: ${cfgPath}`);
+console.log('Not showing up in a few seconds? Restart Claude Code.');

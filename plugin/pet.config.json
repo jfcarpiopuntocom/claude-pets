@@ -3,28 +3,27 @@
   "lang": "en",
   "color": true,
   "maxAgents": 4,
-  "firma": {
+  "maxWidth": 100,
+  "signature": {
     "enabled": true,
-    "glifo": "@",
-    "texto": "by J.F.Carpio -jfcarpio.com- for Avatiun Consultores",
+    "glyph": "@",
     "url": "https://jfcarpio.com"
   },
-  "encadenar": "",
+  "chain": "",
   "thresholds": {
     "workingSec": 20,
     "sleepSec": 120,
-    "errorTailLines": 40,
-    "errorWindowSec": 300,
-    "agentWindowSec": 1800
+    "errorWindowSec": 120,
+    "agentWindowSec": 10800
   },
   "messages": {
     "es": {
-      "calm": "tranquila",
+      "calm": "en calma",
       "working": "trabajando...",
       "agents1": "1 agente trabajando",
       "agentsN": "{n} agentes trabajando",
       "error": "algo falló, revisa",
-      "sleeping": "dormitando... zzz"
+      "sleeping": "dormitando..."
     },
     "en": {
       "calm": "chilling",
@@ -32,7 +31,7 @@
       "agents1": "1 agent working",
       "agentsN": "{n} agents working",
       "error": "something broke, take a look",
-      "sleeping": "napping... zzz"
+      "sleeping": "napping..."
     }
   },
   "creatures": {
@@ -55,8 +54,8 @@
         "=x.x="
       ],
       "sleeping": [
-        "=-.-= z",
-        "=-.-= Z"
+        "=-.-= Zzz",
+        "=-.-= zZz"
       ],
       "messages": {
         "es": {
@@ -70,163 +69,261 @@
     "dog": {
       "name": "Dog",
       "calm": [
-        "U'.'U",
-        "U'-'U"
+        "U(^w^)U",
+        "U(^w^)U~"
       ],
       "working": [
-        "U'o'U",
-        "U'O'U"
+        "U(*w*)U!",
+        "U(*o*)U!!"
       ],
       "agents": [
-        "U'.'U/",
-        "U'.'U\\"
+        "U(^o^)U/",
+        "U(^o^)U\\"
       ],
       "error": [
-        "U;.;U",
-        "Ux.xU"
+        "U(;w;)U",
+        "U(T^T)U"
       ],
       "sleeping": [
-        "U-.-U z",
-        "U-.-U Z"
-      ]
+        "U(-w-)U Zzz",
+        "U(-w-)U zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "¡guau! aquí estoy",
+          "working": "¡guau! ¡ya voy!",
+          "error": "auuu... ¿qué pasó?",
+          "sleeping": "soñando con huesos"
+        },
+        "en": {
+          "calm": "woof! right here",
+          "working": "woof! on it!",
+          "error": "awoo... what now?",
+          "sleeping": "dreaming of bones"
+        }
+      }
     },
     "owl": {
       "name": "Owl",
       "calm": [
-        "{o,o}",
-        "{-,o}"
+        "{^,^}",
+        "{^,-}"
       ],
       "working": [
         "{O,O}",
         "{o,O}"
       ],
       "agents": [
-        "{o,o}/",
-        "{o,o}\\"
+        "{^,^}/",
+        "{^,^}\\"
       ],
       "error": [
         "{@,@}",
-        "{x,x}"
+        "{T,T}"
       ],
       "sleeping": [
-        "{-,-} z",
-        "{-,-} Z"
-      ]
+        "{-,-} Zzz",
+        "{-,-} zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "uhh-uhh...",
+          "working": "uhh, leyendo...",
+          "error": "¿uhh? algo falló",
+          "sleeping": "uhh... zzz"
+        },
+        "en": {
+          "calm": "hoo-hoo...",
+          "working": "hoo, reading...",
+          "error": "hoo? that broke",
+          "sleeping": "hoo... zzz"
+        }
+      }
     },
     "dragon": {
       "name": "Dragon",
       "calm": [
         "<^.^>~",
-        "<^-^>~"
+        "<^.^>~~"
       ],
       "working": [
-        "<^o^>~~",
-        "<^O^>~~~"
+        "<^O^>==*",
+        "<*O*>==**"
       ],
       "agents": [
         "<^.^>~/",
         "<^.^>~\\"
       ],
       "error": [
-        "<x.x>~",
-        "<;.;>~"
+        "<@.@>~",
+        "<T.T>~"
       ],
       "sleeping": [
-        "<-.->~ z",
-        "<-.->~ Z"
-      ]
+        "<-.->~ Zzz",
+        "<-.->~ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "cuidando el tesoro",
+          "working": "¡fuego a fondo!",
+          "error": "grrr... se apagó",
+          "sleeping": "sobre el oro, zzz"
+        },
+        "en": {
+          "calm": "guarding the hoard",
+          "working": "full fire ahead!",
+          "error": "grrr... fizzled",
+          "sleeping": "napping on gold"
+        }
+      }
     },
     "bunny": {
       "name": "Bunny",
       "calm": [
-        "(='.'=)",
-        "(='-'=)"
+        "(\\^x^/)",
+        "(\\^X^/)"
       ],
       "working": [
-        "(='o'=)",
-        "(='O'=)"
+        "(\\OxO/)",
+        "(\\>x</)"
       ],
       "agents": [
-        "(='.'=)/",
-        "(='.'=)\\"
+        "(\\^x^/)/",
+        "(\\^x^/)\\"
       ],
       "error": [
-        "(=;.;=)",
-        "(=x.x=)"
+        "(\\;x;/)",
+        "(\\TxT/)"
       ],
       "sleeping": [
-        "(=-.-=) z",
-        "(=-.-=) Z"
-      ]
+        "(\\-x-/) Zzz",
+        "(\\-x-/) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "oreja atenta",
+          "working": "¡salto y salto!",
+          "error": "¡ay, mis orejas!",
+          "sleeping": "en la madriguera"
+        },
+        "en": {
+          "calm": "ears up",
+          "working": "hop hop hop!",
+          "error": "eek, my ears!",
+          "sleeping": "snug in the burrow"
+        }
+      }
     },
     "penguin": {
       "name": "Penguin",
       "calm": [
-        "<('.')>",
-        "<('-')>"
+        "<(^v^)>",
+        ">(^v^)<"
       ],
       "working": [
-        "<('o')>",
-        "<('O')>"
+        "<(OvO)>",
+        ">(OvO)<"
       ],
       "agents": [
-        "<('.')>/",
-        "<('.')>\\"
+        "<(^v^)>/",
+        "<(^v^)>\\"
       ],
       "error": [
-        "<(;.;)>",
-        "<(x.x)>"
+        "<(;v;)>",
+        "<(TvT)>"
       ],
       "sleeping": [
-        "<(-.-)> z",
-        "<(-.-)> Z"
-      ]
+        "<(-v-)> Zzz",
+        "<(-v-)> zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "de frac y listo",
+          "working": "¡aleteo a full!",
+          "error": "resbalón... ¡ay!",
+          "sleeping": "en el hielo, zzz"
+        },
+        "en": {
+          "calm": "tux on, all set",
+          "working": "flap flap, busy!",
+          "error": "slipped... ouch!",
+          "sleeping": "iceberg nap"
+        }
+      }
     },
     "fish": {
       "name": "Fish",
       "calm": [
-        "><(('>",
-        "><(('> ~"
+        "><(((^>",
+        "><(((^> o"
       ],
       "working": [
-        "><((o>",
-        "><((O>"
+        "><(((*> o",
+        "><(((*>o O"
       ],
       "agents": [
-        "><(('>/",
-        "><(('>\\"
+        "><(((^>/",
+        "><(((^>\\"
       ],
       "error": [
-        "><((x>",
-        "><((;>"
+        "><(((x>",
+        "><(((T>"
       ],
       "sleeping": [
-        "><((-> z",
-        "><((-> Z"
-      ]
+        "><(((-> Zzz",
+        "><(((-> zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "blub, nadando...",
+          "working": "¡blub blub, voy!",
+          "error": "blub... sin agua",
+          "sleeping": "flotando, blub"
+        },
+        "en": {
+          "calm": "blub, swimming...",
+          "working": "blub blub, on it!",
+          "error": "blub... no water",
+          "sleeping": "drifting, blub"
+        }
+      }
     },
     "octopus": {
       "name": "Octopus",
       "calm": [
-        "~(o.o)~",
-        "~(o-o)~"
+        "~{^o^}~",
+        "~{^_^}~"
       ],
       "working": [
-        "~(O.O)~",
-        "~(o.O)~"
+        "~{>o<}~~",
+        "~~{>o<}~"
       ],
       "agents": [
-        "~(o.o)~/",
-        "~(o.o)~\\"
+        "~{^o^}~/",
+        "~{^o^}~\\"
       ],
       "error": [
-        "~(x.x)~",
-        "~(;.;)~"
+        "~{x_x}~ :::",
+        "~{T_T}~ ::"
       ],
       "sleeping": [
-        "~(-.-)~ z",
-        "~(-.-)~ Z"
-      ]
+        "~{-o-}~ Zzz",
+        "~{-o-}~ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "ocho brazos libres",
+          "working": "¡ocho cosas a la vez!",
+          "error": "¡tinta! algo falló",
+          "sleeping": "en su cueva, zzz"
+        },
+        "en": {
+          "calm": "eight arms free",
+          "working": "8 tasks at once!",
+          "error": "ink! it broke",
+          "sleeping": "cozy in the reef"
+        }
+      }
     },
     "mouse": {
       "name": "Mouse",
@@ -235,21 +332,35 @@
         "<:3 )~~"
       ],
       "working": [
-        "<:o )~",
-        "<:O )~"
+        "<:3 )~ ==",
+        "<:3 )~ ==="
       ],
       "agents": [
         "<:3 )~/",
         "<:3 )~\\"
       ],
       "error": [
-        "<:x )~",
-        "<:; )~"
+        "<;3 )~",
+        "<x3 )~"
       ],
       "sleeping": [
-        "<:- )~ z",
-        "<:- )~ Z"
-      ]
+        "<-3 )~ Zzz",
+        "<-3 )~ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "squik, ¿queso?",
+          "working": "¡squik! a toda prisa",
+          "error": "squik... ¡la trampa!",
+          "sleeping": "en su agujero"
+        },
+        "en": {
+          "calm": "squeak, cheese?",
+          "working": "squeak! scurrying",
+          "error": "squeak... a trap!",
+          "sleeping": "curled in the hole"
+        }
+      }
     },
     "pig": {
       "name": "Pig",
@@ -258,169 +369,267 @@
         "(^oo^)~"
       ],
       "working": [
-        "(^OO^)",
-        "(^oO^)"
+        "(>OO<)",
+        "(*oo*)"
       ],
       "agents": [
         "(^oo^)/",
         "(^oo^)\\"
       ],
       "error": [
-        "(xoox)",
-        "(;oo;)"
+        "(TooT)",
+        "(xoox)"
       ],
       "sleeping": [
-        "(-oo-) z",
-        "(-oo-) Z"
-      ]
+        "(-oo-) Zzz",
+        "(-oo-) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "oink, todo bien",
+          "working": "¡oink oink, a darle!",
+          "error": "oink... me embarré",
+          "sleeping": "en el lodo, zzz"
+        },
+        "en": {
+          "calm": "oink, all good",
+          "working": "oink oink, on it!",
+          "error": "oink... muddy mess",
+          "sleeping": "mud nap, zzz"
+        }
+      }
     },
     "frog": {
       "name": "Frog",
       "calm": [
-        "(@..@)",
-        "(@--@)"
+        "(o)__(o)",
+        "(-)__(o)"
       ],
       "working": [
-        "(@oo@)",
-        "(@OO@)"
+        "(o)__(o)-----*",
+        "(O)__(O)--*"
       ],
       "agents": [
-        "(@..@)/",
-        "(@..@)\\"
+        "(o)__(o)/",
+        "(o)__(o)\\"
       ],
       "error": [
-        "(x..x)",
-        "(;..;)"
+        "(;)__(;)",
+        "(x)__(x)"
       ],
       "sleeping": [
-        "(-..-) z",
-        "(-..-) Z"
-      ]
+        "(-)__(-) Zzz",
+        "(-)__(-) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "croac, tranquila",
+          "working": "¡croac! cazando",
+          "error": "croac... se escapó",
+          "sleeping": "en el nenúfar"
+        },
+        "en": {
+          "calm": "ribbit, chillin",
+          "working": "ribbit! catching",
+          "error": "ribbit... missed",
+          "sleeping": "lily pad nap"
+        }
+      }
     },
     "robot": {
       "name": "Robot",
       "calm": [
-        "[o_o]",
-        "[-_o]"
+        "[^_^]",
+        "[o_o]"
       ],
       "working": [
-        "[O_O]",
-        "[o_O]"
+        "[0_1]",
+        "[1_0]"
       ],
       "agents": [
-        "[o_o]/",
-        "[o_o]\\"
+        "[^_^]/",
+        "[^_^]\\"
       ],
       "error": [
-        "[x_x]",
-        "[#_#]"
+        "[x_x]~",
+        "[@_@]~~"
       ],
       "sleeping": [
-        "[-_-] z",
-        "[-_-] Z"
-      ]
+        "[-_-] Zzz",
+        "[-_-] zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "bip bup, en línea",
+          "working": "bip bup, procesando",
+          "error": "error 404, bzzt",
+          "sleeping": "modo ahorro, zzz"
+        },
+        "en": {
+          "calm": "beep boop, online",
+          "working": "beep boop, crunching",
+          "error": "error 404, bzzt",
+          "sleeping": "low power, zzz"
+        }
+      }
     },
-    "alien": {
-      "name": "Alien",
+    "otaku": {
+      "name": "Otaku kitten",
       "calm": [
-        "(@_@)",
-        "(@_-)"
+        "(=^w^=)",
+        "(=^-^=)"
       ],
       "working": [
-        "(@o@)",
-        "(@O@)"
+        "(=>w<=)",
+        "(=OwO=)"
       ],
       "agents": [
-        "(@_@)/",
-        "(@_@)\\"
+        "(=^w^=)/",
+        "(=^w^=)\\"
       ],
       "error": [
-        "(x_x)",
-        "(;_;)"
+        "(=XwX=)",
+        "(=T_T=)"
       ],
       "sleeping": [
-        "(-_-) z",
-        "(-_-) Z"
-      ]
+        "(=-w-=) Zzz",
+        "(=-w-=) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "nyaa~",
+          "working": "¡ganbatte!",
+          "error": "nyaa... gomen",
+          "sleeping": "oyasumi~ nya"
+        },
+        "en": {
+          "calm": "nyaa~",
+          "working": "ganbatte!",
+          "error": "nyaa... gomen",
+          "sleeping": "oyasumi~ nya"
+        }
+      }
     },
     "monkey": {
       "name": "Monkey",
       "calm": [
         "@('_')@",
-        "@('-')@"
+        "@(^_^)@"
       ],
       "working": [
-        "@('o')@",
-        "@('O')@"
+        "@(*o*)@",
+        "@(>o<)@"
       ],
       "agents": [
-        "@('_')@/",
-        "@('_')@\\"
+        "@(^o^)@/",
+        "@(^o^)@\\"
       ],
       "error": [
-        "@(x_x)@",
-        "@(;_;)@"
+        "@(;_;)@",
+        "@(T_T)@"
       ],
       "sleeping": [
-        "@(-_-)@ z",
-        "@(-_-)@ Z"
-      ]
+        "@(-_-)@ Zzz",
+        "@(-_-)@ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "uh-uh, ¿banana?",
+          "working": "¡uh-uh-ah-ah!",
+          "error": "uh... me caí",
+          "sleeping": "colgado, zzz"
+        },
+        "en": {
+          "calm": "ooh-ooh, banana?",
+          "working": "ooh-ooh-ah-ah!",
+          "error": "ooh... fell off",
+          "sleeping": "hanging nap"
+        }
+      }
     },
     "bear": {
       "name": "Bear",
       "calm": [
-        "c(^.^)c",
-        "c(^-^)c"
+        "c(^(I)^)c",
+        "c(-(I)^)c"
       ],
       "working": [
-        "c(^o^)c",
-        "c(^O^)c"
+        "c(*(I)*)c",
+        "c(>(I)<)c"
       ],
       "agents": [
-        "c(^.^)c/",
-        "c(^.^)c\\"
+        "c(^(I)^)c/",
+        "c(^(I)^)c\\"
       ],
       "error": [
-        "c(x.x)c",
-        "c(;.;)c"
+        "c(T(I)T)c",
+        "c(;(I);)c"
       ],
       "sleeping": [
-        "c(-.-)c z",
-        "c(-.-)c Z"
-      ]
+        "c(-(I)-)c Zzz",
+        "c(-(I)-)c zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "abrazo de oso",
+          "working": "¡grr! con todo",
+          "error": "grr... sin miel",
+          "sleeping": "hibernando..."
+        },
+        "en": {
+          "calm": "bear hug",
+          "working": "grr! full power",
+          "error": "grr... no honey",
+          "sleeping": "hibernating..."
+        }
+      }
     },
     "bird": {
       "name": "Bird",
       "calm": [
-        "(.>",
-        "<.)"
+        "(^>",
+        "(^> ~"
       ],
       "working": [
-        "(o>",
-        "(O>"
+        "\\(o>",
+        "/(o>"
       ],
       "agents": [
-        "(.>/",
-        "(.>\\"
+        "(^>/",
+        "(^>\\"
       ],
       "error": [
         "(x>",
-        "(;>"
+        "(T>"
       ],
       "sleeping": [
-        "(-> z",
-        "(-> Z"
-      ]
+        "(-> Zzz",
+        "(-> zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "pío pío~",
+          "working": "¡pío! volando",
+          "error": "pío... me caí",
+          "sleeping": "en el nido, pío"
+        },
+        "en": {
+          "calm": "tweet tweet~",
+          "working": "tweet! flying",
+          "error": "tweet... fell down",
+          "sleeping": "nest nap, tweet"
+        }
+      }
     },
     "duck": {
       "name": "Duck",
       "calm": [
         "__(.)<",
-        "__(.)<~"
+        "__(.)< ~"
       ],
       "working": [
-        "__(o)<",
-        "__(O)<"
+        "~__(o)<",
+        "~~__(o)<"
       ],
       "agents": [
         "__(.)</",
@@ -431,101 +640,171 @@
         "__(;)<"
       ],
       "sleeping": [
-        "__(-)< z",
-        "__(-)< Z"
-      ]
+        "__(-)< Zzz",
+        "__(-)< zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "cuac, flotando",
+          "working": "¡cuac! remando",
+          "error": "cuac... ¡me hundo!",
+          "sleeping": "cuac... zzz"
+        },
+        "en": {
+          "calm": "quack, floating",
+          "working": "quack! paddling",
+          "error": "quack... sinking!",
+          "sleeping": "quack... zzz"
+        }
+      }
     },
     "crab": {
       "name": "Crab",
       "calm": [
-        "(\\/)(o,,o)(\\/)",
-        "(\\/)(-,,o)(\\/)"
+        "(\\/)(^,,^)(\\/)",
+        "(V)(^,,^)(V)"
       ],
       "working": [
         "(\\/)(O,,O)(\\/)",
-        "(\\/)(o,,O)(\\/)"
+        "(V)(>,,<)(V)"
       ],
       "agents": [
-        "(\\/)(o,,o)(\\/)/",
-        "(\\/)(o,,o)(\\/)\\"
+        "(V)(^,,^)(V)/",
+        "(V)(^,,^)(V)\\"
       ],
       "error": [
-        "(\\/)(x,,x)(\\/)",
-        "(\\/)(;,,;)(\\/)"
+        "(\\/)(;,,;)(\\/)",
+        "(\\/)(T,,T)(\\/)"
       ],
       "sleeping": [
-        "(\\/)(-,,-)(\\/) z",
-        "(\\/)(-,,-)(\\/) Z"
-      ]
+        "(V)(-,,-)(V) Zzz",
+        "(V)(-,,-)(V) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "clac clac, de lado",
+          "working": "¡clac! pinzas listas",
+          "error": "clac... me pellizqué",
+          "sleeping": "bajo la arena"
+        },
+        "en": {
+          "calm": "snip snip, sideways",
+          "working": "snip! claws ready",
+          "error": "snip... pinched me",
+          "sleeping": "under the sand"
+        }
+      }
     },
     "bat": {
       "name": "Bat",
       "calm": [
-        "/\\(o.o)/\\",
-        "\\/(o.o)\\/"
+        "/\\(^.^)/\\",
+        "\\/(^.^)\\/"
       ],
       "working": [
-        "/\\(O.O)/\\",
-        "\\/(O.O)\\/"
+        "/\\(>.<)/\\",
+        "\\/(>.<)\\/"
       ],
       "agents": [
-        "/\\(o.o)/\\/",
-        "/\\(o.o)/\\\\"
+        "/\\(^.^)/",
+        "/\\(^.^)\\"
       ],
       "error": [
         "/\\(x.x)/\\",
-        "\\/(;.;)\\/"
+        "\\/(T.T)\\/"
       ],
       "sleeping": [
-        "\\/(-.-)\\/ z",
-        "\\/(-.-)\\/ Z"
-      ]
+        "\\/(-.-)\\/ Zzz",
+        "\\/(-.-)\\/ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "volando de noche",
+          "working": "¡aleteo nocturno!",
+          "error": "iii... me choqué",
+          "sleeping": "colgado al revés"
+        },
+        "en": {
+          "calm": "night flight",
+          "working": "flap flap, busy!",
+          "error": "eek... bonked",
+          "sleeping": "hanging upside down"
+        }
+      }
     },
     "spider": {
       "name": "Spider",
       "calm": [
-        "//(o.o)\\\\",
-        "\\\\(o.o)//"
+        "/\\/(^^^^)\\/\\",
+        "\\/\\(^^^^)/\\/"
       ],
       "working": [
-        "//(O.O)\\\\",
-        "\\\\(O.O)//"
+        "/\\/(OOOO)\\/\\",
+        "\\/\\(OOOO)/\\/"
       ],
       "agents": [
-        "//(o.o)\\\\/",
-        "//(o.o)\\\\\\"
+        "/\\/(^^^^)/",
+        "/\\/(^^^^)\\"
       ],
       "error": [
-        "//(x.x)\\\\",
-        "\\\\(;.;)//"
+        "/\\/(xxxx)\\/\\",
+        "/\\/(;;;;)\\/\\"
       ],
       "sleeping": [
-        "//(-.-)\\\\ z",
-        "//(-.-)\\\\ Z"
-      ]
+        "/\\/(----)\\/\\ Zzz",
+        "/\\/(----)\\/\\ zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "en su telaraña",
+          "working": "¡tejiendo, tejiendo!",
+          "error": "se rompió la tela",
+          "sleeping": "en un rincón"
+        },
+        "en": {
+          "calm": "chilling on the web",
+          "working": "weaving, weaving!",
+          "error": "web got torn",
+          "sleeping": "nap in the corner"
+        }
+      }
     },
     "caterpillar": {
       "name": "Caterpillar",
       "calm": [
-        "oooo(o.o)",
-        "oOoO(o.o)"
+        "oOoO('u')",
+        "OoOo('u')"
       ],
       "working": [
-        "oooo(O.O)",
-        "OoOo(O.O)"
+        "oOoO(OuO)",
+        "OoOo(OuO)"
       ],
       "agents": [
-        "oooo(o.o)/",
-        "oooo(o.o)\\"
+        "oOoO('u')/",
+        "oOoO('u')\\"
       ],
       "error": [
-        "oooo(x.x)",
-        "oooo(;.;)"
+        "oooo(;u;)",
+        "oooo(xux)"
       ],
       "sleeping": [
-        "oooo(-.-) z",
-        "oooo(-.-) Z"
-      ]
+        "oooo(-u-) Zzz",
+        "oooo(-u-) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "ñam, una hojita",
+          "working": "¡ñam ñam, avanzando!",
+          "error": "ay... sin hojas",
+          "sleeping": "en su capullo"
+        },
+        "en": {
+          "calm": "nom, a leaf",
+          "working": "nom nom, inching!",
+          "error": "aw... no leaves",
+          "sleeping": "cocoon time"
+        }
+      }
     },
     "snake": {
       "name": "Snake",
@@ -534,8 +813,8 @@
         "~~~~:>-<"
       ],
       "working": [
-        "~~~~o>",
-        "~~~~O>"
+        "~/\\/\\/:>",
+        "/\\/\\/~:>-<"
       ],
       "agents": [
         "~~~~:>/",
@@ -543,58 +822,100 @@
       ],
       "error": [
         "~~~~x>",
-        "~~~~;>"
+        "_____;>"
       ],
       "sleeping": [
-        "~~~~-> z",
-        "~~~~-> Z"
-      ]
+        "@@~-> Zzz",
+        "@@~-> zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "sss, al sol",
+          "working": "¡sss! reptando",
+          "error": "sss... me enredé",
+          "sleeping": "enroscada, sss"
+        },
+        "en": {
+          "calm": "sss, sunbathing",
+          "working": "sss! slithering",
+          "error": "sss... all tangled",
+          "sleeping": "coiled up, sss"
+        }
+      }
     },
     "ghost": {
       "name": "Ghost",
       "calm": [
-        "(o.o)~",
-        "(o.o)~~"
+        "~~(O.O)",
+        "~~~(O.O)"
       ],
       "working": [
-        "(O.O)~",
-        "(o.O)~~"
+        "~~(OoO) boo!",
+        "~~~(OoO)BOO!"
       ],
       "agents": [
-        "(o.o)~/",
-        "(o.o)~\\"
+        "~~(O.O)/",
+        "~~(O.O)\\"
       ],
       "error": [
-        "(x.x)~",
-        "(;.;)~"
+        "~~(x.x)",
+        "~~(T.T)"
       ],
       "sleeping": [
-        "(-.-)~ z",
-        "(-.-)~ Z"
-      ]
+        "~~(-.-) Zzz",
+        "~~(-.-) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "flotando, uuuh",
+          "working": "¡buu! a trabajar",
+          "error": "uuuh... me asusté",
+          "sleeping": "en el ático, uuuh"
+        },
+        "en": {
+          "calm": "floating, ooOOoo",
+          "working": "boo! on it",
+          "error": "ooh... spooked me",
+          "sleeping": "attic nap, ooOO"
+        }
+      }
     },
     "hedgehog": {
       "name": "Hedgehog",
       "calm": [
-        ";;;;(o.o)",
-        ";;;;(o-o)"
+        "MMMM(^.^)",
+        "MMMM(^_^)"
       ],
       "working": [
-        ";;;;(O.O)",
-        ";;;;(o.O)"
+        "MMMM(>.<)",
+        "WWWW(>.<)"
       ],
       "agents": [
-        ";;;;(o.o)/",
-        ";;;;(o.o)\\"
+        "MMMM(^.^)/",
+        "MMMM(^.^)\\"
       ],
       "error": [
-        ";;;;(x.x)",
-        ";;;;(;.;)"
+        "MMMM(;.;)",
+        "(@@@@@@)"
       ],
       "sleeping": [
-        ";;;;(-.-) z",
-        ";;;;(-.-) Z"
-      ]
+        "MMMM(-.-) Zzz",
+        "MMMM(-.-) zZz"
+      ],
+      "messages": {
+        "es": {
+          "calm": "husmeando, snif",
+          "working": "¡púas arriba!",
+          "error": "¡me hice bolita!",
+          "sleeping": "en la hojarasca"
+        },
+        "en": {
+          "calm": "sniff sniff",
+          "working": "spikes up!",
+          "error": "curled into a ball!",
+          "sleeping": "nap in the leaves"
+        }
+      }
     }
   }
 }

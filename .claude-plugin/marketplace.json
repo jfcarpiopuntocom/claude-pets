@@ -5,14 +5,14 @@
     "url": "https://jfcarpio.com"
   },
   "metadata": {
-    "description": "One-line ASCII pets for the Claude Code statusLine. One little pet per agent on your team.",
-    "version": "1.1.0"
+    "description": "One-line ASCII pets for the Claude Code statusLine. Your agent team shows up beside it, each with its own name.",
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "pets",
       "source": "./plugin",
-      "description": "One-line ASCII pets for the Claude Code statusLine. One little pet per agent on your team.",
+      "description": "One-line ASCII pets for the Claude Code statusLine. Your agent team shows up beside it, each with its own name.",
       "category": "fun",
       "tags": [
         "statusline",

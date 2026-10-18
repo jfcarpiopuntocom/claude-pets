@@ -1,7 +1,7 @@
 {
   "name": "pets",
-  "description": "One-line ASCII pets for the Claude Code statusLine. One little pet per agent on your team.",
-  "version": "1.1.0",
+  "description": "One-line ASCII pets for the Claude Code statusLine. Your agent team shows up beside it, each with its own name.",
+  "version": "1.2.0",
   "author": {
     "name": "J.F.Carpio",
     "url": "https://jfcarpio.com"
@@ -11,7 +11,8 @@
   "license": "MIT",
   "commands": [
     "./commands/setup.md",
-    "./commands/pick.md"
+    "./commands/pick.md",
+    "./commands/remove.md"
   ],
   "keywords": [
     "statusline",
