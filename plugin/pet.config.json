@@ -1,0 +1,85 @@
+{
+  "creature": "gato",
+  "lang": "en",
+  "color": true,
+  "firma": {
+    "enabled": true,
+    "glifo": "@",
+    "texto": "by J.F.Carpio -jfcarpio.com- for Avatiun Consultores",
+    "url": "https://jfcarpio.com"
+  },
+  "encadenar": "",
+  "thresholds": {
+    "workingSec": 20,
+    "agentsSec": 60,
+    "sleepSec": 120,
+    "errorTailLines": 40,
+    "errorWindowSec": 300,
+    "agentWindowSec": 1800
+  },
+  "messages": {
+    "es": {
+      "calm": "tranquila",
+      "working": "trabajando...",
+      "agents1": "1 agente trabajando",
+      "agentsN": "{n} agentes trabajando",
+      "error": "algo fallo, revisa",
+      "sleeping": "dormitando... zzz"
+    },
+    "en": {
+      "calm": "purring",
+      "working": "on it...",
+      "agents1": "1 agent working",
+      "agentsN": "{n} agents working",
+      "error": "something broke, take a look",
+      "sleeping": "napping... zzz"
+    }
+  },
+  "creatures": {
+    "gato": {
+      "calm": [
+        "=^.^=",
+        "=^-^="
+      ],
+      "working": [
+        "=^o^=",
+        "=^O^="
+      ],
+      "agents": [
+        "=^.^=/",
+        "=^.^=\\"
+      ],
+      "error": [
+        "=;.;=",
+        "=x.x="
+      ],
+      "sleeping": [
+        "=-.-= z",
+        "=-.-= Z"
+      ]
+    },
+    "buho": {
+      "calm": [
+        "{o,o}",
+        "{-,o}"
+      ],
+      "working": [
+        "{O,O}",
+        "{o,O}"
+      ],
+      "agents": [
+        "{o,o}/",
+        "{o,o}\\"
+      ],
+      "error": [
+        "{@,@}",
+        "{x,x}"
+      ],
+      "sleeping": [
+        "{-,-} z",
+        "{-,-} Z"
+      ]
+    }
+  },
+  "maxAgentes": 4
+}

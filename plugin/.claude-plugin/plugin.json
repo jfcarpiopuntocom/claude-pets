@@ -1,0 +1,23 @@
+{
+  "name": "pets",
+  "description": "A one-line ASCII kitty for the Claude Code statusLine. She keeps you company; every agent on your team gets its own kitten.",
+  "version": "1.0.0",
+  "author": {
+    "name": "J.F.Carpio",
+    "url": "https://jfcarpio.com"
+  },
+  "homepage": "https://github.com/jfcarpiopuntocom/claude-pets",
+  "repository": "https://github.com/jfcarpiopuntocom/claude-pets",
+  "license": "MIT",
+  "commands": [
+    "./commands/setup.md"
+  ],
+  "keywords": [
+    "statusline",
+    "ascii",
+    "cat",
+    "kitty",
+    "agents",
+    "pets"
+  ]
+}

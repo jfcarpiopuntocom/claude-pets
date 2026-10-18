@@ -1,0 +1,27 @@
+{
+  "name": "claude-pets",
+  "owner": {
+    "name": "J.F.Carpio",
+    "url": "https://jfcarpio.com"
+  },
+  "metadata": {
+    "description": "A one-line ASCII kitty for your Claude Code statusLine.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "pets",
+      "source": "./plugin",
+      "description": "One-line ASCII kitty in your statusLine: purring, working, napping, worried, plus one kitten per agent with its real name.",
+      "category": "fun",
+      "tags": [
+        "statusline",
+        "ascii",
+        "cat",
+        "kitty",
+        "agents",
+        "pets"
+      ]
+    }
+  ]
+}
