@@ -8,7 +8,7 @@ const os = require('os');
 const path = require('path');
 const { spawn } = require('child_process');
 
-const HOME = 'claude-pets', CFG = 'pet.config.json', ENV = 'PETS_CONFIG', DEF = 'kitty', LANG = 'en';
+const HOME = 'claude-pets', CFG = 'pet.config.json', DEF = 'kitty', LANG = 'en';
 const FALLBACK = '=^.^=';
 const plain = (s) => s.replace(/\x1b\[[0-9;]*m|\x1b\]8;;[^\x1b]*\x1b\\/g, '');
 process.stdout.on('error', () => process.exit(0));
@@ -26,7 +26,7 @@ function merge(a, b) {
 // plugin defaults, deep-merged with the user's file (it lives outside the plugin, so it survives updates)
 function readConfig() {
   const base = JSON.parse(fs.readFileSync(path.join(__dirname, CFG), 'utf8').replace(/^﻿/, ''));
-  for (const f of [path.join(configDir(), 'plugins', HOME, 'config.json'), process.env[ENV]].filter(Boolean)) {
+  for (const f of [path.join(configDir(), 'plugins', HOME, 'config.json'), process.env.PETS_CONFIG].filter(Boolean)) {
     try { merge(base, JSON.parse(fs.readFileSync(f, 'utf8').replace(/^﻿/, ''))); } catch (e) {}
   }
   // older Spanish key still works
