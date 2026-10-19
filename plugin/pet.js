@@ -141,7 +141,8 @@ try {
   const ov = cr.messages && cr.messages[cfg.lang];
   const key = state === 'agents' ? (team.length === 1 ? 'agents1' : 'agentsN') : state;
   const msg = ((ov && ov[key]) || cfg.messages[cfg.lang][key]).replace('{n}', team.length);
-  const color = (c, s) => (cfg.color ? `\x1b[${c}m${s}\x1b[0m` : s);
+  const ESC = String.fromCharCode(27);
+  const color = (c, s) => (cfg.color ? ESC + '[' + c + 'm' + s + ESC + '[0m' : s);
 
   // one line that always fits: show fewer agents (as +n) before cutting anything
   const cols = Number.parseInt(process.env.COLUMNS || '', 10);
